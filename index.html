@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shivani K | Personal Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fffaff;
+    color: #30243c;
+}
+
+/* Navigation */
+nav {
+    background:black;
+    padding: 18px;
+    position:static;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h2 {
+    color: #e5cafa;
+    font-family: 'Playfair Display';
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+nav ul a:hover {
+    color: #e5b9ed;
+}
+
+/* Common Sections */
+section {
+    padding: 75px 10%;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+.heading {
+    text-align: center;
+    font-size: 38px;
+    color: #76518f;
+    margin-bottom: 35px;
+}
+
+p {
+    line-height: 1.8;
+}
+
+/* Home */
+#home {
+    min-height: 90vh;
+    background: linear-gradient(120deg, #eee2fa, #fceaf2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.home-text {
+    max-width: 500px;
+}
+
+.home-text h1 {
+    font-size: 55px;
+    color: #63447d;
+}
+
+.home-text h2 {
+    font-size: 24px;
+    margin: 15px 0;
+}
+
+.home-text p {
+    color: #675d70;
+}
+
+.profile {
+    width: 300px;
+    height: 380px;
+    object-fit: cover;
+    object-position: center 35%;
+    border: 8px solid white;
+    border-radius: 150px 150px 25px 25px;
+    box-shadow: 0 10px 35px #8d6eaa55;
+    transition: 0.4s;
+}
+
+.profile:hover {
+    transform: scale(1.04) rotate(2deg);
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    background: #76518f;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #a47bc2;
+    transform: translateY(-4px);
+}
+
+/* About */
+#about {
+    background: #fffaff;
+}
+
+.about-box {
+    background: #f4eafa;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px #00000010;
+}
+
+/* Education */
+#education {
+    background: #f6effb;
+}
+
+.education-box {
+    background: white;
+    padding: 25px;
+    margin: 18px 0;
+    border-left: 6px solid #a47bc2;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.education-box:hover {
+    transform: translateX(10px);
+}
+
+/* Skills */
+.skill-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    background: #f3e8fa;
+    padding: 25px;
+    border-radius: 18px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    background: #e6d3f4;
+    transform: translateY(-8px);
+}
+
+.skill-card h3 {
+    color: #76518f;
+    margin-bottom: 10px;
+}
+
+/* Hobbies */
+#hobbies {
+    background: #fff6fa;
+}
+
+.hobby-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.hobby-card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px #00000010;
+    transition: 0.3s;
+}
+
+.hobby-card:hover {
+    transform: scale(1.06);
+    background: #f2e6fa;
+}
+
+.hobby-card span {
+    font-size: 35px;
+}
+
+/* Goals */
+#goals {
+    background: #f3eafa;
+}
+
+.goal-box {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+/* Achievements */
+.achievement-box {
+    background: #f5eafa;
+    padding: 25px;
+    margin: 15px 0;
+    border-radius: 15px;
+}
+
+/* Contact */
+#contact {
+    background: linear-gradient(120deg, #eee2fa, #fceaf2);
+    text-align: center;
+}
+
+.contact-link {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 22px;
+    background: #76518f;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.contact-link:hover {
+    background: #a47bc2;
+    transform: translateY(-4px);
+}
+
+/* Footer */
+footer {
+    background: #30243c;
+    color: white;
+    text-align: center;
+    padding: 22px;
+}
+
+@media(max-width: 700px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #home {
+        text-align: center;
+        padding: 50px 6%;
+    }
+
+    .home-text h1 {
+        font-size: 40px;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav>
+    <h2>Shivani.</h2>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#goals">Goals</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- 1. Home -->
+<section id="home">
+
+    <div class="home-text">
+        <h2>Hello! Welcome to my world ✨</h2>
+        <h1>I'm Shivani K.</h1>
+
+        <h2>Student | Dreamer | Future Tech Professional</h2>
+
+        <p>
+            Welcome to my personal portfolio!
+            I am a passionate and curious student
+            pursuing B.Sc. in Cloud Computing and
+            Big Data at REVA University.
+            I love learning new things, exploring
+            technology and improving my skills.
+        </p>
+
+        <a href="#about" class="btn">Explore More ↓</a>
+    </div>
+
+    <img src="shivani.jpeg"
+         alt="Shivani's Profile Photograph"
+         class="profile">
+
+</section>
+
+<!-- 2. About Me -->
+<section id="about">
+
+    <h2 class="heading">About Me ♡</h2>
+
+    <div class="about-box">
+        <p>
+            Hello! I am Shivani K. I am a student
+            from Karnataka, India. I believe that
+            learning is a continuous journey.
+
+            I am interested in technology, reading,
+            travelling and discovering new ideas.
+            I consider myself a positive,
+            hardworking, creative and friendly person.
+
+            My aim is to become successful in my
+            career and make my family proud.
+        </p>
+
+        <br>
+        <p><b>Hometown:</b> banglore</p>
+        <p><b>University:</b> REVA University</p>
+        <p><b>Course:</b> B.Sc. Cloud Computing and Big Data</p>
+    </div>
+
+</section>
+
+<!-- 3. Education -->
+<section id="education">
+
+    <h2 class="heading">My Education 🎓</h2>
+
+    <div class="education-box">
+        <h3>🏫 schooling</h3>
+        <p>Soundarya School</p>
+        <p>10th Standard</p>
+        <p>Year: [2024]</p>
+        <p>Percentage: [523]</p>
+    </div>
+
+    <div class="education-box">
+        <h3>📚 pu college</h3>
+        <p>Soundarya PU College</p>
+        <p>12th / PUC</p>
+        <p>Stream: [PCMB]</p>
+        <p>Percentage: [523]</p>
+    </div>
+
+    <div class="education-box">
+        <h3>🎓 University</h3>
+        <p>REVA University</p>
+        <p>B.Sc. Cloud Computing and Big Data</p>
+        <p>Currently Pursuing</p>
+    </div>
+
+</section>
+
+<!-- 4. Skills -->
+<section id="skills">
+
+    <h2 class="heading">My Skills 💻</h2>
+
+    <div class="skill-container">
+
+        <div class="skill-card">
+            <h3>Computer Knowledge</h3>
+            <p>Computer Fundamentals</p>
+            <p>MS Office</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Programming</h3>
+            <p>C Programming</p>
+            <p>HTML and CSS</p>
+            <p>python</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Technical Skills</h3>
+            <p>Cloud Computing</p>
+            <p>Big Data Basics</p>
+            <p>Internet Technologies</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Personal Skills</h3>
+            <p>Communication</p>
+            <p>Teamwork</p>
+            <p>Creativity</p>
+            <p>Time Management</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- 5. Hobbies -->
+<section id="hobbies">
+
+    <h2 class="heading">Hobbies & Interests 🌸</h2>
+
+    <div class="hobby-container">
+
+        <div class="hobby-card">
+            <span>📚</span>
+            <h3>Reading</h3>
+            <p>Exploring books and stories.</p>
+        </div>
+
+        <div class="hobby-card">
+            <span>🎵</span>
+            <h3>Music</h3>
+            <p>Listening to music.</p>
+        </div>
+
+        <div class="hobby-card">
+            <span>✈️</span>
+            <h3>Travelling</h3>
+            <p>Exploring new places.</p>
+        </div>
+
+        <div class="hobby-card">
+            <span>📸</span>
+            <h3>Photography</h3>
+            <p>Capturing beautiful moments.</p>
+        </div>
+
+        <div class="hobby-card">
+            <span>🏸</span>
+            <h3>Sports</h3>
+            <p>cricket</p>
+        </div>
+
+        <div class="hobby-card">
+            <span>🎨</span>
+            <h3>Creativity</h3>
+            <p>Exploring creative ideas.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- 6. Goals -->
+<section id="goals">
+
+    <h2 class="heading">My Goals 🎯</h2>
+
+    <div class="goal-box">
+        <h3>🌱 Short-Term Goals</h3>
+        <p>
+            Improve my programming skills,
+            gain technical knowledge, complete
+            academic projects and develop
+            my communication skills.
+        </p>
+    </div>
+
+    <div class="goal-box">
+        <h3>🚀 Long-Term Goals</h3>
+        <p>
+            Become a successful technology
+            professional in Cloud Computing
+            and Big Data, gain experience in
+            the IT industry and pursue higher
+            education.
+        </p>
+    </div>
+
+</section>
+
+
+
+<!-- 8. Contact -->
+<section id="contact">
+
+    <h2 class="heading">Contact Me 💌</h2>
+
+    <p>
+        Thank you for visiting my personal portfolio!
+        Feel free to connect with me.
+    </p>
+
+    <br>
+
+    <a href="mailto:yourmail@gmail.com"
+       class="contact-link">📧 Email Me</a>
+
+    <a href="https://www.linkedin.com/"
+       target="_blank"
+       class="contact-link">💼 LinkedIn</a>
+
+    <a href="https://github.com/"
+       target="_blank"
+       class="contact-link">💻 GitHub</a>
+
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 Shivani K. | Designed with 💜</p>
+    <p>Dream Big • Work Hard • Stay Humble</p>
+</footer>
+
+<script>
+
+// Welcome Message
+window.onload = function() {
+    console.log("Welcome to Shivani's Personal Portfolio!");
+};
+
+// Navigation Highlight
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function() {
+        document.querySelectorAll('nav a').forEach(item => {
+            item.style.color = "white";
+        });
+
+        this.style.color = "#e5b9ed";
+    });
+});
+
+// Back to top button functionality
+window.addEventListener('scroll', function() {
+    console.log("You are exploring Shivani's portfolio!");
+});
+
+</script>
+
+</body>
+</html>
